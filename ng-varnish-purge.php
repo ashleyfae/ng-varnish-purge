@@ -81,7 +81,7 @@ class NgVarnishPurge
         }
     }
 
-    public function adminBarNode(WP_Admin_Bar $adminBar): void
+    public function adminBarNode(\WP_Admin_Bar $adminBar): void
     {
         if (! current_user_can('manage_options')) {
             return;
