@@ -209,7 +209,7 @@ class NgVarnishPurge
          */
     }
 
-    public function purgeFeed(string $newStatus, string $oldStatus, WP_Post $post): void
+    public function purgeFeed(string $newStatus, string $oldStatus, \WP_Post $post): void
     {
         if ($oldStatus !== 'publish' && $newStatus !== 'publish') {
             $this->purgeUrl(home_url('/feed/'), self::WILDCARD);
