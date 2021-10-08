@@ -137,6 +137,11 @@ class NgVarnishPurge
 
     public function purgePost(int $postId): void
     {
+        $supportedPostTypes = ['post', 'page', 'download'];
+        if (! in_array(get_post_type($postId), $supportedPostTypes)) {
+            return;
+        }
+
         $postPermalink = get_permalink($postId);
 
         // Post isn't public, so no need to purge.
