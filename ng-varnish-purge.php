@@ -135,7 +135,7 @@ class NgVarnishPurge
         );
     }
 
-    public function purgePost(int $postId): void
+    public function purgePost($postId): void
     {
         $supportedPostTypes = ['post', 'page', 'download'];
         if (! in_array(get_post_type($postId), $supportedPostTypes)) {
