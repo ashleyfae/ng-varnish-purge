@@ -99,9 +99,10 @@ class NgVarnishPurge
 
     public function executePurge(): void
     {
-        if (isset($_GET['post'])) {
+        // Wtf was going on here?
+        /*if (isset($_GET['post'])) {
             $this->purgePost(intval($_GET['post']));
-        }
+        }*/
 
         $purgeUrls = array_unique($this->urlsToPurge);
 
